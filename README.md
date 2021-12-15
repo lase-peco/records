@@ -2,7 +2,7 @@
 <img src="https://banners.beyondco.de/Records.png?theme=light&packageManager=composer+require&packageName=lase-peco%2Frecords&pattern=yyy&style=style_1&description=Record+the+activities+in+your+project&md=1&showWatermark=0&fontSize=125px&images=folder-open"/>
 
 # Record the activities in your Laravel project.
-***
+
 
 The ``lase-peco/records`` is a simple library to record all kind of activities inside your Laravel
 project. It has practical functions to record the activities in your project.
@@ -16,7 +16,7 @@ You can install the package via composer:
 ```bash
 composer require lase-peco/records
 ```
-after installing the package you can create the ``records`` table by running the migrations:
+After installing the package you can create the ``records`` table by running the migrations:
 
 ```php 
 php artisan migrate
@@ -26,7 +26,7 @@ php artisan migrate
 The simplest way to use the package is to use the included helper function ``record()``:
 
 ```php
-record('Oh, Something happened here!') // yes, that simple!
+record('Oh, Something happened here!') // yes, it is that simple!
 ```
 You can fetch all the records using the Model ``LasePeCo\Records\Models\Record``
 
@@ -40,13 +40,13 @@ Now an advanced example:
 
 ```php
 record()
-    ->by($aModel)
-    ->onSubject($aModel)
+    ->by($anElequentModel)
+    ->onSubject($anElequentModel)
     ->properties(['someProperty' => 'someValue'])
     ->message('Oh, Something happened here!');
 ```
 
-You can retrieve the following from a record:
+You can retrieve the data from the record as following:
  
 ```php
 use LasePeCo\Records\Models\Record;
@@ -59,14 +59,15 @@ $record->properties; //returns an array ['someProperty' => 'someValue']
 $record->message; //returns 'Oh, Something happened here!'
 ```
 
-When a record was created and the causer was not provided, then by default the authenticated user will be added as a causer for the record.
+If you don't provide the causer, when creating the record, then by default the authenticated user will be added as a causer for the record.
 If there is no authenticated user, then the causer will be null.
 
+###Options
+
 Optionally you can save the ``IP`` of the request in your record by chaining the ``withIp()`` method on the helper function ``record()``.
-the IP will be anonymized and saved in the record.
+The IP will be anonymized and saved in the record.
 
 ```php
-
 record('Oh, Something happened here!')->withIp();
 
 use LasePeCo\Records\Models\Record;
