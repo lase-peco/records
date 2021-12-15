@@ -63,7 +63,7 @@ When a record was created and the causer was not provided, then by default the a
 If there is no authenticated user, then the causer will be null.
 
 Optionally you can save the ``IP`` of the request in your record by chaining the ``withIp()`` method on the helper function ``record()``.
-the IP will be anonymized and saved in the record.l
+the IP will be anonymized and saved in the record.
 
 ```php
 
