@@ -62,7 +62,7 @@ $record->message; //returns 'Oh, Something happened here!'
 If you don't provide the causer, when creating the record, then by default the authenticated user will be added as a causer for the record.
 If there is no authenticated user, then the causer will be null.
 
-###Options
+### Options
 
 Optionally you can save the ``IP`` of the request in your record by chaining the ``withIp()`` method on the helper function ``record()``.
 The IP will be anonymized and saved in the record.
