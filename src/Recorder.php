@@ -4,6 +4,7 @@ namespace LasePeCo\Records;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use LasePeCo\Records\Models\Record;
 
 class Recorder
@@ -36,13 +37,20 @@ class Recorder
         return $this;
     }
 
+    public function withIp()
+    {
+        $ipWithoutLastSection = Str::beforeLast(request()->ip(),'.' );
+
+        $this->record->ip = $ipWithoutLastSection.'.***';
+
+        return $this;
+    }
+
     public function __destruct()
     {
         if (!$this->record->causer_id) {
             $this->by(Auth::user() ?? null);
         }
-
-        $this->record->ip = request()->ip();
 
         $this->record->save();
     }
