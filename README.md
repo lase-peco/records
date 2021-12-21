@@ -1,10 +1,7 @@
-
-<img src="https://banners.beyondco.de/Records.png?theme=light&packageManager=composer+require&packageName=lase-peco%2Frecords&pattern=yyy&style=style_1&description=Record+the+activities+in+your+project&md=1&showWatermark=0&fontSize=125px&images=folder-open"/>
-
 # Record the activities in your Laravel project.
 
 
-The ``lase-peco/records`` is a simple library to record all kind of activities inside your Laravel
+The `lase-peco/records` is a simple library to record all kind of activities inside your Laravel
 project. It has practical functions to record the activities in your project.
 the records will be stored in the ``records`` table.
 
