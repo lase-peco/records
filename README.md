@@ -1,5 +1,7 @@
 # Record the activities in your Laravel project.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lase-peco/records.svg?style=flat-square)](https://packagist.org/packages/lase-peco/records)
+[![Total Downloads](https://img.shields.io/packagist/dt/lase-peco/records.svg?style=flat-square)](https://packagist.org/packages/lase-peco/records)
 
 The `lase-peco/records` is a simple library to record all kind of activities inside your Laravel
 project. It has practical functions to record the activities in your project.
